@@ -1,4 +1,8 @@
-interface LayoutProps  { 
+'use client'
+import Footer from "../footer";
+import Navbar from "../navbar";
+
+interface LayoutProps extends React.HTMLAttributes<HTMLDivElement> { 
 	children: React.ReactNode;
 	title?: string;
 }
@@ -6,14 +10,16 @@ interface LayoutProps  {
 const Layout:React.FC<LayoutProps> = (props:LayoutProps) => {
 	return (
 		<>
-			<div className="mx-20 mt-10 flex flex-wrap">
-				<div className="flex items-start gap-4 p-4 sm:p-6 lg:p-8 flex-wrap">
-				{props.title && <h1 className="text-2xl font-semibold">{props.title}</h1>}
+			<div className="m-20 flex flex-col">
+				<Navbar/>
+				<div className="flex items-start gap-4 sm:p-6 lg:p-8 flex-wrap">
+				{props.title && <h1 className="text-[35px] font-semibold">{props.title}</h1>}
 				</div>
 			<div className="flex items-start gap-4 p-4 sm:p-6 lg:p-8 justify-center flex-wrap">
 				{props.children}
+				</div>
 			</div>
-		</div>
+		<Footer/>
 		</>
 )
 }
