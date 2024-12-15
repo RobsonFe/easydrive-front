@@ -19,7 +19,7 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-black border-b border-neutral-200 dark:border-neutral-800">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#F4F4F4] dark:bg-black border-b border-neutral-200 dark:border-neutral-800">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <div className="text-lg font-medium text-neutral-900 dark:text-white">

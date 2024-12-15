@@ -5,7 +5,7 @@ const Footer = () => {
   const ano = new Date().getFullYear();
 
   return (
-    <footer className="bg-white dark:bg-neutral-900 py-24 text-neutral-500 dark:text-neutral-400 border-t border-neutral-200 dark:border-neutral-800">
+    <footer className="bg-[#F4F4F4] dark:bg-neutral-900 py-24 text-neutral-500 dark:text-neutral-400 border-t border-neutral-200 dark:border-neutral-800">
       <div className="container mx-auto px-6">
         <div className="grid gap-16 sm:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-8">
