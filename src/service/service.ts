@@ -11,7 +11,6 @@ class Service {
         try {
             const response = await axios.get(`${this.api}rent/list/`);
 					const result = response.data.results;
-					console.log(result);
             return result;
             
         } catch (error) {

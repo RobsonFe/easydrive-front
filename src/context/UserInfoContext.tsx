@@ -15,7 +15,9 @@ interface UserInfo {
 const UserInfoContext = createContext<UserInfo | null>(null);
 
 export function UserInfoContextProvider({ children }: { children: React.ReactNode }) {
+
 	const service = new Service();
+	
 	const [userInfo, setUserInfo] = useState<UserInfo | null>({
 		id: "",
 		total_rentals: 0,
