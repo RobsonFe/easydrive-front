@@ -1,4 +1,5 @@
 import { FaCar, FaRegCalendarAlt, FaRegUser } from "react-icons/fa";
+import { GiCarKey } from "react-icons/gi";
 import { MdOutlineEmail } from "react-icons/md";
 import { RiMotorbikeFill } from "react-icons/ri";
 import { DialogInfoButton } from "./dialogInfoComponent";
@@ -58,15 +59,19 @@ const RentCard = ({
             </div>
             <div className="flex items-center text-sm text-gray-600 dark:text-gray-300">
               <FaRegCalendarAlt className="w-4 h-4 mr-2"  />
-              <span>{ dataDeInicio } - { dataFinal }</span>
+              <span>{ dataDeInicio?.replace("-", "/").replace("-","/") } - { dataFinal?.replace("-", "/").replace("-","/")}</span>
             </div>
             <div className="flex items-center text-sm text-gray-600 dark:text-gray-300">
-              {tipo === "Carro" ? <FaCar className="w-4 h-4 mr-2"/>: <RiMotorbikeFill className="w-4 h-4 mr-2" /> }
+              <GiCarKey className="w-4 h-4 mr-2"/>
               <span>{ marca }</span>
+            </div>
+            <div className="flex items-center text-sm text-gray-600 dark:text-gray-300">
+              {tipo === "Carro" ? <FaCar className="w-4 h-4 mr-2"/> : <RiMotorbikeFill className="w-4 h-4 mr-2" /> }
+              <span>{ veiculo }</span>
             </div>
           </div>
           <p className="mb-8 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-            Veiculo alugado por x dias, com data de inicio em { dataDeInicio } e data final em { dataFinal }.
+            Veiculo alugado por x dias, com data de inicio em { dataDeInicio?.replace("-", "/").replace("-","/") } e data final em { dataFinal?.replace("-", "/").replace("-","/") }.
           </p>
           <div className="flex space-x-4">
             <button className="w-1/2 rounded-full bg-blue-600/90 px-6 py-3 text-sm font-medium text-white hover:bg-blue-700 transition-colors duration-200 dark:bg-blue-500 dark:hover:bg-blue-600">

@@ -48,8 +48,8 @@ const RentList = () => {
         }, []);
 
     return (
-        <Layout title="Lista de Alugueis">
-            <div className="flex flex-wrap gap-3">
+        <Layout title="Listagem de Alugueis">
+            <div className="flex justify-center items-center flex-wrap gap-5">
                 {rent.map((rent) => (
                     <RentCard
                         key={rent.id}
