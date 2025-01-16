@@ -1,14 +1,14 @@
 
 import { Button } from "@/components/ui/button";
 import {
-	Dialog,
-	DialogClose,
-	DialogContent,
-	DialogDescription,
-	DialogFooter,
-	DialogHeader,
-	DialogTitle,
-	DialogTrigger,
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
 } from "@/components/ui/dialog";
 import { IoInformationCircle } from "react-icons/io5";
 
@@ -42,7 +42,7 @@ export function DialogInfoButton({ descricao, classNameContainer, classNameConte
 							</div>
 						) : (
 								<div className="flex items-center text-sm text-gray-600 dark:text-gray-300">
-								<span>Descrição Detalhada do Aluguel</span>
+								<span>Descrição do Aluguel</span>
 							</div>
 						)}
           </div>
