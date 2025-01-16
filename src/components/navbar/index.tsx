@@ -1,11 +1,18 @@
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 import React, { useState } from "react";
 import { ModeToggle } from "../toggle";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navItems = ["Home", "About", "Services", "Contact"];
+  const navItems = [
+    { name: "Home", path: "/greetings" },
+    { name: "Aluguéis", path: "/list/rent" },
+    { name: "Veiculos", path: "/list/vehicle" },
+    { name: "Contato", path: "/contact" },
+    { name: "Sobre", path: "/about" }
+  ];
 
   const handleClickOutside = (e: any) => {
     if (isOpen && !e.target.closest("nav")) {
@@ -23,7 +30,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <div className="text-lg font-medium text-neutral-900 dark:text-white">
-            Logo
+            Easy Drive
           </div>
 
           <button
@@ -39,13 +46,13 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="text-sm text-neutral-900 dark:text-white hover:text-neutral-500 dark:hover:text-neutral-400 transition-colors duration-300"
+              <Link 
+                key={item.name}
+                href={item.path}
+                className="text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white"
               >
-                {item}
-              </a>
+                {item.name}
+              </Link>
             ))}
             <ModeToggle/>
           </div>
@@ -55,7 +62,7 @@ const Navbar = () => {
               href="#"
               className="rounded-full bg-neutral-900 px-6 py-2 text-sm font-medium text-white hover:bg-neutral-700 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-100 transition-colors duration-300"
             >
-              Sign Up
+              Entrar
             </a>
             <a
               href="#"
@@ -80,14 +87,14 @@ const Navbar = () => {
           <div className="flex flex-col p-4">
             <div className="flex flex-col space-y-4 mb-8">
               {navItems.map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="text-sm text-neutral-900 dark:text-white hover:text-neutral-500 dark:hover:text-neutral-400 transition-colors duration-300"
-                >
-                  {item}
-                </a>
-              ))}
+              <Link 
+                key={item.name}
+                href={item.path}
+                className="text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white"
+              >
+                {item.name}
+              </Link>
+            ))}
               <ModeToggle/>
             </div>
 

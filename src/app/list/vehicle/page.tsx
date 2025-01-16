@@ -1,8 +1,12 @@
+import Layout from "@/components/layout";
+
 const VehicleList = () => {
 	return (
-		<div>
-			<h1>Vehicle List</h1>
-		</div>
+		<Layout title="Listagem de Veículos">
+			<div>
+				<h1>Veículos</h1>
+			</div>
+			</Layout>
 	);
 }
 
