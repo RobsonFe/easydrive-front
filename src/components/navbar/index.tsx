@@ -1,29 +1,29 @@
-import { Menu, X } from "lucide-react";
-import Link from "next/link";
-import React, { useState } from "react";
-import { ModeToggle } from "../toggle";
+import { Menu, X } from "lucide-react"
+import Link from "next/link"
+import React, { useState } from "react"
+import { ModeToggle } from "../toggle"
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const navItems = [
     { name: "Home", path: "/greetings" },
     { name: "Aluguéis", path: "/list/rent" },
     { name: "Veiculos", path: "/list/vehicle" },
     { name: "Contato", path: "/contact" },
-    { name: "Sobre", path: "/about" }
-  ];
+    { name: "Sobre", path: "/about" },
+  ]
 
   const handleClickOutside = (e: any) => {
     if (isOpen && !e.target.closest("nav")) {
-      setIsOpen(false);
+      setIsOpen(false)
     }
-  };
+  }
 
   React.useEffect(() => {
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, [isOpen]);
+    document.addEventListener("click", handleClickOutside)
+    return () => document.removeEventListener("click", handleClickOutside)
+  }, [isOpen])
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#F4F4F4] dark:bg-black border-b border-neutral-200 dark:border-neutral-800">
@@ -36,8 +36,8 @@ const Navbar = () => {
           <button
             className="relative z-50 text-neutral-900 dark:text-white md:hidden"
             onClick={(e) => {
-              e.stopPropagation();
-              setIsOpen(!isOpen);
+              e.stopPropagation()
+              setIsOpen(!isOpen)
             }}
             aria-label="Toggle menu"
           >
@@ -46,7 +46,7 @@ const Navbar = () => {
 
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link 
+              <Link
                 key={item.name}
                 href={item.path}
                 className="text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white"
@@ -54,7 +54,7 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <ModeToggle/>
+            <ModeToggle />
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -87,15 +87,15 @@ const Navbar = () => {
           <div className="flex flex-col p-4">
             <div className="flex flex-col space-y-4 mb-8">
               {navItems.map((item) => (
-              <Link 
-                key={item.name}
-                href={item.path}
-                className="text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white"
-              >
-                {item.name}
-              </Link>
-            ))}
-              <ModeToggle/>
+                <Link
+                  key={item.name}
+                  href={item.path}
+                  className="text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white"
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <ModeToggle />
             </div>
 
             <div className="flex flex-col space-y-4">
@@ -116,7 +116,7 @@ const Navbar = () => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

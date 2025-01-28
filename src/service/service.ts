@@ -26,6 +26,7 @@ class Service {
     async userInfo() {
         try {
             const response = await axios.get(`${this.api}client/user/list/`);
+            console.log(response.data.results);
             return response.data.results;
 
         } catch (error) {
