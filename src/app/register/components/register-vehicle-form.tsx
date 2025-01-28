@@ -13,7 +13,7 @@ const RegisterVehicleForm = () => {
     model: z.string().nonempty(),
     year: z.string().nonempty(),
     type: z.enum(["car", "motorcycle"]),
-    quantity: z.number().int().positive(),
+    quantity: z.coerce.number(),
     description: z.string().optional(),
   })
 
@@ -145,7 +145,7 @@ const RegisterVehicleForm = () => {
                   <input
                     className="w-full rounded-lg border-gray-200 p-3 text-sm"
                     placeholder="Quantidade"
-                    type="number"
+                    type="text"
                     id="quantity"
                     {...register("quantity")}
                   />
