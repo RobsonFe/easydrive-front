@@ -25,9 +25,11 @@ class Service {
   async vehicleCreate(data: any) {
     try {
       const response = await axios.post(`${this.api}vehicle/create/`, data)
-      return response.data
-    } catch (error) {
-      if (axios.isAxiosError(error)) {
+      if (response.status === 201 || response.status === 200) {
+        return response.data
+      }
+    } catch (error: any) {
+      if (axios.isAxiosError(error) || error.response.status !== 201) {
         console.error("Erro na requisição:", error.message)
       } else {
         console.error("Erro inesperado:", error)

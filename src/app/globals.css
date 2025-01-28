@@ -7,7 +7,7 @@ body {
 }
 
 /* Sapphire */
-@layer base {
+/* @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
@@ -60,11 +60,9 @@ body {
     --chart-4: 210 98% 78%;
     --chart-5: 212 97% 87%;
     }
-}
+} */
 
-
-
-/* @layer base {
+@layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
@@ -119,8 +117,7 @@ body {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-} */
-
+}
 
 @layer base {
   * {

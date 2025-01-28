@@ -4,16 +4,25 @@ import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import Service from "@/service/service"
+import { ToastContainer, toast } from "react-toastify"
 
 const RegisterVehicleForm = () => {
   const service = new Service()
 
   const vehicleSchema = z.object({
-    brand: z.string().nonempty(),
-    model: z.string().nonempty(),
-    year: z.string().nonempty(),
+    brand: z.string().nonempty({
+      message: "Esse campo não pode ser vazio",
+    }),
+    model: z.string().nonempty({
+      message: "Esse campo não pode ser vazio",
+    }),
+    year: z.string().nonempty(
+      { message: "Esse campo não pode ser vazio" }
+    ).max(4, { message: "Ano inválido" }),
     type: z.enum(["car", "motorcycle"]),
-    quantity: z.coerce.number(),
+    quantity: z.coerce.number({
+      message: "Esse campo não pode ser vazio",
+    }),
     description: z.string().optional(),
   })
 
@@ -24,13 +33,34 @@ const RegisterVehicleForm = () => {
   type Vehicle = z.infer<typeof vehicleSchema>
 
   function onSubmit(data: Vehicle) {
-    console.log(data)
-    service.vehicleCreate(data)
-    reset()
+    try {
+      service.vehicleCreate(data)
+      reset()
+      toast.success("Veículo cadastrado com sucesso!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
+    } catch (error:any) {
+      console.error(error)
+      toast.error(`Erro ao cadastrar veículo! ${error.message}`, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
+    }
   }
 
   return (
-    <section className="z-20 flex border-t border-gray-800 shadow-md bg-gray-800">
+    <section className="z-20 flex border rounded-xl shadow-md bg-slate-50 text-[#333] dark:text-white dark:bg-[#212121]">
       <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
           <div className="lg:col-span-2 lg:py-12">
@@ -43,7 +73,10 @@ const RegisterVehicleForm = () => {
             </p>
 
             <div className="mt-8">
-              <a href="#" className="text-2xl font-bold text-pink-600">
+              <a
+                href="#"
+                className="text-2xl font-bold text-black dark:text-slate-400"
+              >
                 {" "}
                 (81) 1234-5678
               </a>
@@ -54,10 +87,10 @@ const RegisterVehicleForm = () => {
             </div>
           </div>
 
-          <div className="rounded-lg bg-[#3333] p-8 shadow-lg lg:col-span-3 lg:p-12">
+          <div className="rounded-2xl border dark:border-[#333] bg-slate-50 text-black dark:text-slate-50 dark:bg-[#212121] p-8 shadow-lg lg:col-span-3 lg:p-12">
             <form
               action="#"
-              className="space-y-4 overflow-y-auto"
+              className="space-y-4 overflow-y-auto border-black"
               onSubmit={handleSubmit(onSubmit)}
             >
               <div className="rounded-lg">
@@ -104,7 +137,7 @@ const RegisterVehicleForm = () => {
                 <div>
                   <label
                     htmlFor="car"
-                    className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
+                    className="block w-full cursor-pointer rounded-lg border border-gray-200 text-black dark:text-slate-50 p-3 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
                     tabIndex={0}
                   >
                     <input
@@ -120,10 +153,10 @@ const RegisterVehicleForm = () => {
                   </label>
                 </div>
 
-                <div>
+                <div className="text-black dark:text-slate-50">
                   <label
                     htmlFor="motorcycle"
-                    className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
+                    className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-black dark:text-slate-50 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
                     tabIndex={0}
                   >
                     <input
@@ -138,7 +171,7 @@ const RegisterVehicleForm = () => {
                     <span className="text-sm"> Moto </span>
                   </label>
                 </div>
-                <div>
+                <div className="text-black dark:text-slate-50">
                   <label className="sr-only" htmlFor="quantity">
                     Quantidade
                   </label>
@@ -151,13 +184,13 @@ const RegisterVehicleForm = () => {
                   />
                 </div>
               </div>
-              <div>
+              <div className="text-black dark:text-slate-50">
                 <label className="sr-only" htmlFor="description">
                   Descrição
                 </label>
 
                 <textarea
-                  className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                  className="w-full rounded-lg border-gray-200 text-black dark:text-slate-50 p-3 text-sm"
                   placeholder="Descrição"
                   rows={8}
                   id="description"
@@ -168,7 +201,7 @@ const RegisterVehicleForm = () => {
               <div className="mt-4">
                 <button
                   type="submit"
-                  className="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
+                  className="inline-block w-full rounded-lg dark:bg-[#333] text-white bg-black px-5 py-3 font-medium dark:text-slate-50 sm:w-auto"
                 >
                   Registrar
                 </button>
@@ -177,6 +210,7 @@ const RegisterVehicleForm = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </section>
   )
 }

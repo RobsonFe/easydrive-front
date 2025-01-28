@@ -5,19 +5,17 @@ export default function Home() {
     <Layout title="EasyDrive">
       <div>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-          vestibulum, justo nec tincidunt lacinia, justo purus fermentum dolor,
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae voluptatum quisquam, nesciunt, laudantium suscipit distinctio totam impedit quaerat eum ipsum voluptate reiciendis necessitatibus ab voluptatibus in qui nobis sunt repellendus.
-          Inventore iste consequuntur in laudantium voluptatum odio voluptas alias velit ab ducimus, assumenda quis magni. Dignissimos obcaecati accusamus, modi provident quo maiores, soluta delectus temporibus a velit officiis deleniti voluptatem.
-          Facilis, alias cumque! Officiis, aliquam veritatis nisi molestias asperiores explicabo inventore nostrum expedita veniam reiciendis ipsum dolorem est, molestiae numquam optio a doloremque ex quibusdam architecto, nesciunt alias quisquam? Quisquam.
-          Quisquam ea dolorum eaque dolor molestias deleniti neque, earum, odit praesentium aliquam impedit quasi asperiores provident non quo! Quibusdam qui neque saepe consectetur corrupti, suscipit veniam quod quidem ullam dolore.
-          Architecto numquam, aspernatur maiores nobis accusantium voluptate esse maxime veritatis, laboriosam, deleniti quaerat? Perspiciatis voluptatum dolores nemo cum laudantium sunt non dolor fuga, esse ea possimus neque reiciendis modi molestiae?
-          Neque iusto deserunt pariatur quia fugit fugiat aliquid facere aut hic rem consequuntur iste facilis totam quidem voluptatem quam, unde labore distinctio dolor incidunt, quod cum repellat. Expedita, natus dolor!
-          Vitae in at, molestias nobis earum provident veritatis sed eum eligendi aut temporibus ex accusantium possimus assumenda eius dolor iste commodi similique unde quod? Quis tempora voluptate laboriosam iure error.
-          Sunt dolorem quis cupiditate minima! Et laboriosam officiis dolores illo repudiandae consequatur sit eaque molestiae deleniti exercitationem non nihil corporis, id sapiente delectus dicta commodi a deserunt quia vel omnis?
-          Repellendus recusandae voluptates, mollitia, nihil minus in debitis veniam animi beatae sed doloremque. Quaerat harum culpa nisi non delectus ipsam ratione, exercitationem voluptatum. Esse placeat odit voluptatem suscipit totam consequuntur.
-          Impedit facere nihil deleniti incidunt provident architecto maiores esse ad nisi, accusamus ab vel dolorum dignissimos facilis amet nam, culpa ullam. Deleniti, aperiam! Dolor illo debitis odio commodi illum id!
-          </p>
+          EasyDrive é um sistema inovador de aluguel de carros e motos, projetado para oferecer a melhor experiência ao usuário. Com uma interface intuitiva e fácil de usar, você pode reservar veículos de forma rápida e segura.
+          Nosso sistema permite que você escolha entre uma ampla variedade de carros e motos, todos bem mantidos e prontos para uso. Além disso, oferecemos preços competitivos e diversas opções de pagamento para sua conveniência.
+          A segurança é nossa prioridade. Todos os veículos passam por rigorosas inspeções de segurança antes de serem disponibilizados para aluguel. Você pode confiar na qualidade e na confiabilidade dos nossos serviços.
+          Com EasyDrive, você tem a liberdade de explorar a cidade ou fazer aquela viagem dos sonhos sem preocupações. Nossa equipe de suporte está sempre disponível para ajudar com qualquer dúvida ou problema que você possa ter.
+          Oferecemos também um aplicativo móvel, para que você possa gerenciar suas reservas e acessar informações importantes diretamente do seu smartphone. Tudo para tornar sua experiência ainda mais conveniente.
+          Seja para uma viagem de negócios, um passeio de fim de semana ou uma necessidade urgente, EasyDrive tem o veículo certo para você. Nossa missão é proporcionar uma experiência de aluguel de veículos sem complicações.
+          Além disso, estamos comprometidos com a sustentabilidade. Nossa frota inclui opções de veículos elétricos e híbridos, para que você possa fazer uma escolha ecológica e contribuir para um futuro mais verde.
+          A satisfação do cliente é fundamental para nós. Por isso, estamos sempre buscando maneiras de melhorar nossos serviços e garantir que você tenha a melhor experiência possível com EasyDrive.
+          Não perca tempo com processos complicados e burocráticos. Com EasyDrive, alugar um veículo é simples, rápido e eficiente. Experimente hoje mesmo e descubra a diferença.
+          Junte-se aos milhares de clientes satisfeitos que já escolheram EasyDrive para suas necessidades de transporte. Estamos ansiosos para atendê-lo e tornar sua próxima viagem inesquecível.
+        </p>
      </div>
     </Layout>
   );
