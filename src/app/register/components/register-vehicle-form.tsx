@@ -26,7 +26,7 @@ const RegisterVehicleForm = () => {
     description: z.string().optional(),
   })
 
-  const { register, handleSubmit, reset } = useForm<Vehicle>({
+  const { register, handleSubmit, reset, formState:{errors}} = useForm<Vehicle>({
     resolver: zodResolver(vehicleSchema),
   })
 
@@ -104,6 +104,7 @@ const RegisterVehicleForm = () => {
                   id="brand"
                   {...register("brand")}
                 />
+                <p className="mt-2 text-red-600">{errors.brand?.message}</p>
               </div>
 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -118,6 +119,7 @@ const RegisterVehicleForm = () => {
                     id="model"
                     {...register("model")}
                   />
+                  <p className="mt-2 text-red-600">{errors.model?.message}</p>
                 </div>
 
                 <div>
@@ -131,6 +133,7 @@ const RegisterVehicleForm = () => {
                     id="year"
                     {...register("year")}
                   />
+                  <p className="mt-2 text-red-600">{errors.year?.message}</p>
                 </div>
               </div>
               <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
@@ -181,7 +184,9 @@ const RegisterVehicleForm = () => {
                     type="text"
                     id="quantity"
                     {...register("quantity")}
+                    onChange={(e) => { e.currentTarget.value = e.currentTarget.value.replace(/[^0-9]/g, "")}}
                   />
+                  <p className="mt-2 text-red-600">{errors.quantity?.message}</p>
                 </div>
               </div>
               <div className="text-black dark:text-slate-50">
